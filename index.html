@@ -167,16 +167,14 @@ section{position:relative}
 @media(max-width:620px){.revs{grid-template-columns:1fr}}
 
 /* ── мастер ───────────────────────────────────── */
-.mast{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
-      gap:clamp(24px,4vw,64px);align-items:center}
-.mast img{width:100%;height:auto}
-.mast .q{font-family:var(--disp);font-weight:300;font-size:clamp(19px,2.2vw,30px);
-         line-height:1.28;letter-spacing:-.02em;margin-bottom:22px}
+.mast .q{font-family:var(--disp);font-weight:300;font-size:clamp(24px,3.4vw,46px);
+         line-height:1.22;letter-spacing:-.02em;margin-bottom:24px;max-width:24ch}
 .mast .from{font-family:var(--lab);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
-.mast ul{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:10px}
+.mast ul{list-style:none;margin:34px 0 0;padding:26px 0 0;display:grid;gap:14px 40px;
+         grid-template-columns:1fr 1fr;border-top:1px solid var(--lineL)}
 .mast li{position:relative;padding-left:22px;font-size:15px;color:#3A3530}
 .mast li::before{content:'';position:absolute;left:0;top:.62em;width:10px;height:2px;background:var(--coral)}
-@media(max-width:820px){.mast{grid-template-columns:1fr}}
+@media(max-width:820px){.mast ul{grid-template-columns:1fr}.mast .q{max-width:none}}
 
 /* ── запись ───────────────────────────────────── */
 .book{background:var(--teal);color:#F1FBF8}
@@ -250,8 +248,8 @@ section{position:relative}
 <!-- факты -->
 <section class="facts">
   <div class="wrap"><div class="row">
-    <div class="c"><b>4,9</b><span>рейтинг в 2ГИС, 37 оценок</span></div>
-    <div class="c"><b>30</b><span>отзывов в карточке 2ГИС</span></div>
+    <div class="c"><b>4,9</b><span>средняя оценка, 37 отзывов</span></div>
+    <div class="c"><b>30</b><span>развёрнутых отзывов</span></div>
     <div class="c"><b>07:30&ndash;22:00</b><span>ежедневно, по записи</span></div>
     <div class="c"><b>Ладо Кецховели, 34</b><span>2 этаж, Железнодорожный район</span></div>
   </div></div>
@@ -260,16 +258,15 @@ section{position:relative}
 <!-- мастер -->
 <section class="sect" id="master">
   <div class="wrap mast rv">
-    <img src="master.jpg" alt="Нина Калашникова, мастер по причёскам">
     <div>
       <span class="lab" style="color:var(--coral);display:block;margin-bottom:16px">01 — Мастер</span>
       <div class="q">«Умопомрачительные, шикарные, самые лучшие и симпатичные девушки — это девушки Сибири, красноярочки. Я хочу сделать вас более заметными в нашем большом городе».</div>
       <div class="from">Нина Калашникова</div>
       <ul>
-        <li>«Творим красоту уже лет 20, ой, больше» — подпись под работой на странице мастера.</li>
+        <li>«Творим красоту уже лет 20, ой, больше».</li>
         <li>Работает в пространстве Ninina.pricheska на Ладо Кецховели, 34, вместе с мастерами по макияжу и маникюру.</li>
         <li>Окрашивания и уходы на органических линейках Tempting Erayba Marginal и Dr&rsquo;Sorbie, корейская завивка Juno hair.</li>
-        <li>В карточке 2ГИС отмечены выезд на дом, Wi-Fi, пандус и доступный вход.</li>
+        <li>Выезд на дом, Wi-Fi, пандус и доступный вход в здание.</li>
       </ul>
     </div>
   </div>
@@ -294,10 +291,10 @@ section{position:relative}
       <div class="srow"><span class="no">09</span><h3>Детская стрижка</h3><p>Первая стрижка малыша и стрижки школьников.</p><span class="v">по записи</span></div>
       <div class="srow"><span class="no">10</span><h3>Наращивание волос</h3><p>Наращивание и работа с уже нарощенными волосами.</p><span class="v">по записи</span></div>
       <div class="srow"><span class="no">11</span><h3>Макияж и маникюр</h3><p>В том же пространстве работают мастера по макияжу и маникюру.</p><span class="v">по записи</span></div>
-      <div class="srow"><span class="no">12</span><h3>Консультация</h3><p>«Консультация по любым видам услуг — бесплатно», — из поста мастера.</p><span class="v">бесплатно</span></div>
+      <div class="srow"><span class="no">12</span><h3>Консультация</h3><p>Консультация по любым видам услуг.</p><span class="v">бесплатно</span></div>
     </div>
     <button class="svc-more" id="svc-more" type="button" aria-expanded="false" aria-controls="svc-list">Показать все услуги</button>
-    <p class="note">В 2ГИС указаны только две позиции прайса, они и стоят выше. Стоимость остальных работ мастер называет при записи. Цены не являются публичной офертой (ст. 437 ГК РФ).</p>
+    <p class="note">Стоимость работы зависит от длины, густоты волос и материалов и называется до начала работы. Цены не являются публичной офертой (ст. 437 ГК РФ).</p>
   </div>
 </section>
 
@@ -307,7 +304,7 @@ section{position:relative}
     <div class="head rv">
       <span class="lab">03 — Косы</span>
       <h2>Плетение, которое <i>держится неделями</i></h2>
-      <p>«Доча проходила 26–27 дней. При том что каждый день была в воде», — Татьяна Банина, отзыв в 2ГИС.</p>
+      <p>«Доча проходила 26–27 дней. При том что каждый день была в воде», — Татьяна Банина.</p>
     </div>
     <div class="fgrid rv">
       <figure><img src="w-01.jpg" alt="Брейды с бусинами, работа мастера" loading="lazy"><figcaption>Брейды с декором</figcaption></figure>
@@ -322,8 +319,7 @@ section{position:relative}
   <div class="wrap">
     <div class="head rv">
       <span class="lab">04 — Работы</span>
-      <h2>Фотографии <i>со страницы мастера</i></h2>
-      <p>Снимки публикует сама Нина. Ничего не обрезано и не перекрашено.</p>
+      <h2>Свежие <i>работы</i></h2>
     </div>
     <div class="works rv">
       <figure><img src="w-02.jpg" alt="Брейды с тонкими косами и вплетением" loading="lazy"><figcaption><span>Брейды</span><i>01</i></figcaption></figure>
@@ -344,28 +340,27 @@ section{position:relative}
   <div class="wrap">
     <div class="head rv">
       <span class="lab">05 — Отзывы</span>
-      <h2>4,9 из 5 <i>в 2ГИС</i></h2>
-      <p>37 оценок и 30 отзывов в карточке. Ниже — фрагменты, тексты открыты в 2ГИС.</p>
+      <h2>4,9 <i>из 5</i></h2>
     </div>
     <div class="revs rv">
       <div class="rev"><div class="stars">★★★★★</div>
         <p>«Нина не простой рядовой мастер. Это человек с глубоким чувством прекрасного… Делая стрижку, она старается ещё и на будущее, чтоб всё отрастало красиво, плавно и долго».</p>
-        <div class="who"><span>Оксана Корытько</span><i>2ГИС</i></div></div>
+        <div class="who"><span>Оксана Корытько</span><i>отзыв</i></div></div>
       <div class="rev"><div class="stars">★★★★★</div>
         <p>«У меня очень тонкий волос, и сделать причёску красивой и простой в укладке мало кто умеет. Нина умеет. Косы плетёт сумасшедше крутые».</p>
-        <div class="who"><span>Ольга Серенкова</span><i>2ГИС</i></div></div>
+        <div class="who"><span>Ольга Серенкова</span><i>отзыв</i></div></div>
       <div class="rev"><div class="stars">★★★★★</div>
         <p>«Она сделала мне две французские косы, которые продержались три недели — и никаких неприятных ощущений. Спасибо и за сервис: чашечка кофе, конфетка, маленький презент с собой».</p>
-        <div class="who"><span>Александра Моисеева</span><i>2ГИС</i></div></div>
+        <div class="who"><span>Александра Моисеева</span><i>отзыв</i></div></div>
       <div class="rev"><div class="stars">★★★★★</div>
         <p>«Подстригла сегодня своего малышарика, 1 год 9 месяцев. Это была его первая стрижка. Всё прошло очень быстро и без слёз».</p>
-        <div class="who"><span>O. T.</span><i>2ГИС</i></div></div>
+        <div class="who"><span>O. T.</span><i>отзыв</i></div></div>
       <div class="rev"><div class="stars">★★★★★</div>
         <p>«Нина всегда даёт профессиональные советы по уходу за волосами. Всегда отличная мужская стрижка, быстро и недорого».</p>
-        <div class="who"><span>Денис Михайлов</span><i>2ГИС</i></div></div>
+        <div class="who"><span>Денис Михайлов</span><i>отзыв</i></div></div>
       <div class="rev"><div class="stars">★★★★★</div>
         <p>«Огромная благодарность Нине, дети безумно счастливы. Море позитивных эмоций и воплощение детских желаний».</p>
-        <div class="who"><span>Константин Сушенов</span><i>2ГИС</i></div></div>
+        <div class="who"><span>Константин Сушенов</span><i>отзыв</i></div></div>
     </div>
   </div>
 </section>
@@ -388,8 +383,7 @@ section{position:relative}
       </div>
       <div>
         <div class="brow"><span class="k">ВКонтакте</span><span class="v"><a href="https://vk.com/pricheskikn" target="_blank" rel="noopener">Страница мастера</a><small>и сообщество NININA.PRICHESKA</small></span></div>
-        <div class="brow"><span class="k">2ГИС</span><span class="v"><a href="https://2gis.ru/krasnoyarsk/firm/70000001082766352" target="_blank" rel="noopener">Карточка салона</a><small>4,9 из 5, 37 оценок</small></span></div>
-        <div class="brow"><span class="k">Выезд</span><span class="v">Выезд на дом отмечен в карточке 2ГИС</span></div>
+        <div class="brow"><span class="k">Выезд</span><span class="v">Возможен выезд на дом</span></div>
         <div class="acts">
           <a class="btn btn-s" href="tel:+79029646566">Позвонить</a>
           <a class="btn btn-o" href="https://wa.me/79029646566" target="_blank" rel="noopener">WhatsApp</a>
