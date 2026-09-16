@@ -123,6 +123,15 @@ section{position:relative}
   .srow .v{grid-column:2;color:var(--teal)}
 }
 .note{margin-top:22px;color:var(--dim);font-size:13px;max-width:70ch}
+.svc-more{display:none;width:100%;margin-top:18px;padding:14px 20px;background:none;
+          border:1px solid var(--lineL);border-radius:999px;color:var(--ink);cursor:pointer;
+          font-family:var(--lab);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+.svc-more:hover{background:rgba(14,90,86,.06)}
+@media(max-width:800px){
+  .svc-more{display:block}
+  .svc.is-collapsed .srow:nth-child(n+5){display:none}
+  .svc.is-collapsed{position:relative}
+}
 
 /* ── коса: блок-фича ──────────────────────────── */
 .feat{background:var(--ink);color:var(--milk)}
@@ -232,7 +241,7 @@ section{position:relative}
     </div>
     <figure class="hero-ph" style="margin:0">
       <img src="hero.jpg" alt="Длинные красные вплетения из канекалона, работа Нины Калашниковой" fetchpriority="high">
-      <span class="tagx">яркие вплёты</span>
+      <span class="tagx">мастер</span>
     </figure>
   </div>
 </section>
@@ -272,9 +281,8 @@ section{position:relative}
     <div class="head rv">
       <span class="lab">02 — Что делаю</span>
       <h2>От школьной косы <i>до свадебных сборов</i></h2>
-      <p>Список услуг мастера: собран из карточки 2ГИС и из её собственного поста о салоне.</p>
     </div>
-    <div class="svc rv">
+    <div class="svc rv is-collapsed" id="svc-list">
       <div class="srow"><span class="no">01</span><h3>Косы и плетения</h3><p>Афрокосы, афрокудри, боксёрские и французские косы, дреды.</p><span class="v">по записи</span></div>
       <div class="srow"><span class="no">02</span><h3>Косы с канекалоном</h3><p>Яркие вплёты, цветные прядки на кератине и на зажимах.</p><span class="v">по записи</span></div>
       <div class="srow"><span class="no">03</span><h3>Причёски и укладки</h3><p>Свадебные сборы, сборы на корпоратив, вечерние причёски, прикорневой объём.</p><span class="v">по записи</span></div>
@@ -288,6 +296,7 @@ section{position:relative}
       <div class="srow"><span class="no">11</span><h3>Макияж и маникюр</h3><p>В том же пространстве работают мастера по макияжу и маникюру.</p><span class="v">по записи</span></div>
       <div class="srow"><span class="no">12</span><h3>Консультация</h3><p>«Консультация по любым видам услуг — бесплатно», — из поста мастера.</p><span class="v">бесплатно</span></div>
     </div>
+    <button class="svc-more" id="svc-more" type="button" aria-expanded="false" aria-controls="svc-list">Показать все услуги</button>
     <p class="note">В 2ГИС указаны только две позиции прайса, они и стоят выше. Стоимость остальных работ мастер называет при записи. Цены не являются публичной офертой (ст. 437 ГК РФ).</p>
   </div>
 </section>
@@ -446,6 +455,15 @@ section{position:relative}
   }
   fitWm(); addEventListener('resize',fitWm);
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fitWm);
+
+  var more=document.getElementById('svc-more'), list=document.getElementById('svc-list');
+  if(more&&list){
+    more.addEventListener('click',function(){
+      var open=list.classList.toggle('is-collapsed')===false;
+      more.textContent=open?'Свернуть список':'Показать все услуги';
+      more.setAttribute('aria-expanded',open?'true':'false');
+    });
+  }
 
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
