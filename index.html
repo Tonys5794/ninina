@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ninina.pricheska — причёски, косы и вплетения, Красноярск</title>
+<meta name="description" content="Нина Калашникова, мастер по причёскам в Красноярске. Косы, афрокосы, канекалон, вплетения, окрашивание, свадебные сборы. Ладо Кецховели, 34.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;800&family=Commissioner:wght@300;400;500;600&family=Tektur:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141210;
+  --ink-2:#221E1B;
+  --milk:#F4F0E9;
+  --milk-2:#EAE4DA;
+  --teal:#0E5A56;
+  --teal-l:#157C76;
+  --coral:#DD4B2A;
+  --amber:#E9A13B;
+  --grass:#2E9E6B;
+  --sky:#2C7BD0;
+  --dim:#6F6862;
+  --dim-l:#A79F97;
+  --lineL:rgba(20,18,16,.14);
+  --lineD:rgba(244,240,233,.16);
+  --disp:'Unbounded',system-ui,Arial,sans-serif;
+  --lab:'Tektur',ui-monospace,Menlo,monospace;
+  --txt:'Commissioner',-apple-system,'Segoe UI',Arial,sans-serif;
+  --braid:linear-gradient(90deg,var(--coral),var(--amber),var(--grass),var(--sky),var(--coral));
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--milk);color:var(--ink);font-family:var(--txt);
+     font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{margin:0;font-family:var(--disp);font-weight:800;letter-spacing:-.03em;line-height:.95}
+p{margin:0 0 1em}
+.lab{font-family:var(--lab);font-size:11px;letter-spacing:.24em;text-transform:uppercase}
+
+/* ── общая сетка ──────────────────────────────── */
+.wrap{width:min(1280px,100% - clamp(20px,5vw,80px));margin-inline:auto}
+section{position:relative}
+.sect{padding-block:clamp(56px,7vw,112px)}
+
+/* ── верхняя панель ───────────────────────────── */
+.top{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;align-items:center;gap:20px;
+     padding:12px clamp(16px,4vw,40px);background:rgba(20,18,16,.92);color:var(--milk);
+     backdrop-filter:blur(8px);transition:transform .35s}
+.top.hide{transform:translateY(-100%)}
+.top .brand{font-family:var(--disp);font-weight:800;font-size:15px;letter-spacing:-.02em;white-space:nowrap}
+.top nav{display:flex;gap:18px;margin-left:auto;flex-wrap:wrap}
+.top nav a{font-family:var(--lab);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+           text-decoration:none;opacity:.72;transition:opacity .2s}
+.top nav a:hover{opacity:1}
+.top .cta{background:var(--milk);color:var(--ink);text-decoration:none;padding:9px 16px;border-radius:999px;
+          font-family:var(--lab);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
+@media(max-width:900px){.top nav{display:none}}
+
+/* ── лента-канекалон ──────────────────────────── */
+.ribbon{height:5px;background:var(--braid);background-size:200% 100%;animation:slide 14s linear infinite}
+@keyframes slide{to{background-position:200% 0}}
+
+/* ── герой ────────────────────────────────────── */
+.hero{background:var(--ink);color:var(--milk);padding-top:clamp(84px,9vw,120px);
+      padding-bottom:clamp(40px,5vw,72px);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);
+           gap:clamp(24px,4vw,64px);align-items:end}
+.hero h1{font-size:clamp(34px,7vw,96px);text-transform:uppercase;line-height:1.02}
+.hero h1 span{display:block;white-space:nowrap}
+.hero h1 em{font-style:normal;display:block;color:transparent;background:var(--braid);
+            background-size:180% 100%;-webkit-background-clip:text;background-clip:text;animation:slide 12s linear infinite}
+.hero .kicker{display:flex;align-items:center;gap:12px;margin-bottom:clamp(18px,2.4vw,30px);color:var(--dim-l)}
+.hero .kicker i{display:block;width:clamp(28px,5vw,64px);height:1px;background:var(--dim-l);flex:none}
+.hero .said{max-width:46ch;margin-top:clamp(20px,2.6vw,34px);color:#CEC7BE;font-size:clamp(15px,1.25vw,18px)}
+.hero .said b{color:var(--milk);font-weight:600}
+.hero-act{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(22px,2.8vw,34px)}
+.btn{display:inline-block;text-decoration:none;padding:13px 22px;border-radius:999px;
+     font-family:var(--lab);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+.btn-s{background:var(--milk);color:var(--ink)}
+.btn-o{border:1px solid var(--lineD);color:var(--milk)}
+.btn-o:hover{background:rgba(244,240,233,.1)}
+.hero-ph{position:relative;align-self:end}
+.hero-ph img{width:100%;height:auto;border-radius:0}
+.hero-ph .tagx{position:absolute;left:-10px;bottom:18px;background:var(--coral);color:#fff;
+               font-family:var(--lab);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:8px 14px}
+@media(max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:28px}
+  .hero-ph{max-width:340px}
+}
+
+/* ── факты ────────────────────────────────────── */
+.facts{background:var(--ink-2);color:var(--milk)}
+.facts .row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--lineD)}
+.facts .c{background:var(--ink-2);padding:clamp(18px,2.4vw,30px) clamp(14px,2vw,26px);min-width:0}
+.facts b{overflow-wrap:anywhere}
+.facts b{display:block;font-family:var(--disp);font-weight:600;font-size:clamp(22px,2.6vw,34px);letter-spacing:-.02em}
+.facts span{display:block;margin-top:8px;color:var(--dim-l);font-size:12.5px;line-height:1.45}
+@media(max-width:760px){.facts .row{grid-template-columns:1fr 1fr}}
+
+/* ── заголовок секции ─────────────────────────── */
+.head{max-width:64ch;margin-bottom:clamp(28px,3.6vw,56px)}
+.head .lab{color:var(--coral);display:block;margin-bottom:14px}
+.head h2{font-size:clamp(26px,4.2vw,56px);text-transform:uppercase}
+.head h2 i{font-style:normal;color:var(--teal)}
+.head p{margin-top:16px;color:var(--dim);font-size:clamp(14.5px,1.15vw,17px)}
+
+/* ── услуги: строки-пряди ─────────────────────── */
+.svc{border-top:1px solid var(--lineL)}
+.srow{display:grid;grid-template-columns:auto minmax(0,1.1fr) minmax(0,1.4fr) auto;
+      gap:clamp(12px,2.4vw,38px);align-items:baseline;padding:20px 0;
+      border-bottom:1px solid var(--lineL);transition:padding-left .25s,background .25s}
+.srow:hover{padding-left:14px;background:rgba(14,90,86,.05)}
+.srow .no{font-family:var(--lab);font-size:11px;color:var(--teal);letter-spacing:.12em}
+.srow h3{font-family:var(--disp);font-weight:600;font-size:clamp(15px,1.5vw,21px);
+         letter-spacing:-.02em;text-transform:none}
+.srow p{margin:0;color:var(--dim);font-size:14px}
+.srow .v{font-family:var(--lab);font-size:12px;white-space:nowrap;color:var(--ink)}
+@media(max-width:800px){
+  .srow{grid-template-columns:auto 1fr;row-gap:6px}
+  .srow p{grid-column:2}
+  .srow .v{grid-column:2;color:var(--teal)}
+}
+.note{margin-top:22px;color:var(--dim);font-size:13px;max-width:70ch}
+
+/* ── коса: блок-фича ──────────────────────────── */
+.feat{background:var(--ink);color:var(--milk)}
+.feat .head h2 i{color:var(--amber)}
+.feat .head p{color:#B9B1A8}
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.4vw,22px)}
+.fgrid figure{margin:0}
+.fgrid img{width:100%;height:auto}
+.fgrid figcaption{margin-top:10px;font-family:var(--lab);font-size:10.5px;letter-spacing:.16em;
+                  text-transform:uppercase;color:var(--dim-l)}
+@media(max-width:760px){.fgrid{grid-template-columns:1fr 1fr}.fgrid figure:last-child{grid-column:1/-1;max-width:60%}}
+
+/* ── работы ───────────────────────────────────── */
+.works{column-count:4;column-gap:clamp(10px,1.2vw,20px)}
+.works figure{margin:0 0 clamp(14px,1.6vw,24px);break-inside:avoid;-webkit-column-break-inside:avoid;
+              display:inline-block;width:100%}
+.works img{width:100%;height:auto;background:var(--milk-2)}
+.works figcaption{display:flex;justify-content:space-between;gap:10px;padding-top:9px;
+                  font-family:var(--lab);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.works figcaption i{font-style:normal;color:var(--coral)}
+@media(max-width:1180px){.works{column-count:3}}
+@media(max-width:820px){.works{column-count:2}}
+
+/* ── отзывы ───────────────────────────────────── */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,26px)}
+.rev{background:#fff;border:1px solid var(--lineL);padding:clamp(18px,2.2vw,28px);display:flex;flex-direction:column}
+.rev .stars{color:var(--amber);font-size:13px;letter-spacing:.14em;margin-bottom:12px}
+.rev p{font-size:14.5px;color:#2E2A26}
+.rev .who{margin-top:auto;padding-top:14px;border-top:1px solid var(--lineL);
+          display:flex;justify-content:space-between;gap:10px;
+          font-family:var(--lab);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+@media(max-width:900px){.revs{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.revs{grid-template-columns:1fr}}
+
+/* ── мастер ───────────────────────────────────── */
+.mast{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+      gap:clamp(24px,4vw,64px);align-items:center}
+.mast img{width:100%;height:auto}
+.mast .q{font-family:var(--disp);font-weight:300;font-size:clamp(19px,2.2vw,30px);
+         line-height:1.28;letter-spacing:-.02em;margin-bottom:22px}
+.mast .from{font-family:var(--lab);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.mast ul{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:10px}
+.mast li{position:relative;padding-left:22px;font-size:15px;color:#3A3530}
+.mast li::before{content:'';position:absolute;left:0;top:.62em;width:10px;height:2px;background:var(--coral)}
+@media(max-width:820px){.mast{grid-template-columns:1fr}}
+
+/* ── запись ───────────────────────────────────── */
+.book{background:var(--teal);color:#F1FBF8}
+.book .head h2 i{color:#9FE3D4}
+.book .head p{color:#CCEAE3}
+.bgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,48px)}
+.brow{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.2)}
+.brow .k{font-family:var(--lab);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.8}
+.brow .v{text-align:right}
+.brow .v a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
+.brow .v small{display:block;opacity:.72;font-size:12px;margin-top:4px}
+.book .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.book .btn-s{background:#F1FBF8;color:var(--teal)}
+.book .btn-o{border-color:rgba(255,255,255,.4);color:#F1FBF8}
+@media(max-width:820px){.bgrid{grid-template-columns:1fr}}
+
+/* ── правовое ─────────────────────────────────── */
+.legal{background:var(--ink);color:#B9B1A8;font-size:13.5px}
+.legal h3{font-family:var(--lab);font-weight:400;font-size:10.5px;letter-spacing:.2em;
+          text-transform:uppercase;color:var(--milk);margin-bottom:14px}
+.lgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,3.4vw,56px)}
+.legal a{color:var(--milk)}
+.warn{border:1px solid var(--lineD);padding:12px 14px;margin-bottom:14px;color:var(--milk);font-size:13px}
+.legal ul{margin:0 0 14px;padding-left:18px}
+.legal li{margin-bottom:6px}
+@media(max-width:820px){.lgrid{grid-template-columns:1fr}}
+
+/* ── появление ────────────────────────────────── */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.ribbon{animation:none}}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <span class="brand">NININA.PRICHESKA</span>
+  <nav>
+    <a href="#svc">Услуги</a>
+    <a href="#braids">Косы</a>
+    <a href="#works">Работы</a>
+    <a href="#revs">Отзывы</a>
+    <a href="#master">Мастер</a>
+    <a href="#book">Записаться</a>
+  </nav>
+  <a class="cta" href="tel:+79029646566">+7 902 964-65-66</a>
+</header>
+
+<!-- герой -->
+<section class="hero" id="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker"><i></i><span class="lab">Красноярск &middot; Ладо Кецховели, 34</span></div>
+      <h1 id="wm"><span>Нина</span><span>Калашникова</span><em><span>причёски</span></em></h1>
+      <p class="said">«Создаю причёски всем. И ВАМ! Даже если мы просто прошли друг мимо друга».
+        <b>Косы, афрокосы, канекалон, вплетения, окрашивание и сборы</b> — двадцать с лишним лет у кресла.</p>
+      <div class="hero-act">
+        <a class="btn btn-s" href="tel:+79029646566">Позвонить</a>
+        <a class="btn btn-o" href="https://vk.com/pricheskikn" target="_blank" rel="noopener">Написать в ВК</a>
+        <a class="btn btn-o" href="https://wa.me/79029646566" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <figure class="hero-ph" style="margin:0">
+      <img src="hero.jpg" alt="Длинные красные вплетения из канекалона, работа Нины Калашниковой" fetchpriority="high">
+      <span class="tagx">яркие вплёты</span>
+    </figure>
+  </div>
+</section>
+<div class="ribbon"></div>
+
+<!-- факты -->
+<section class="facts">
+  <div class="wrap"><div class="row">
+    <div class="c"><b>4,9</b><span>рейтинг в 2ГИС, 37 оценок</span></div>
+    <div class="c"><b>30</b><span>отзывов в карточке 2ГИС</span></div>
+    <div class="c"><b>07:30&ndash;22:00</b><span>ежедневно, по записи</span></div>
+    <div class="c"><b>Ладо Кецховели, 34</b><span>2 этаж, Железнодорожный район</span></div>
+  </div></div>
+</section>
+
+<!-- услуги -->
+<section class="sect" id="svc">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="lab">01 — Что делаю</span>
+      <h2>От школьной косы <i>до свадебных сборов</i></h2>
+      <p>Список услуг мастера: собран из карточки 2ГИС и из её собственного поста о салоне.</p>
+    </div>
+    <div class="svc rv">
+      <div class="srow"><span class="no">01</span><h3>Косы и плетения</h3><p>Афрокосы, афрокудри, боксёрские и французские косы, дреды.</p><span class="v">по записи</span></div>
+      <div class="srow"><span class="no">02</span><h3>Косы с канекалоном</h3><p>Яркие вплёты, цветные прядки на кератине и на зажимах.</p><span class="v">по записи</span></div>
+      <div class="srow"><span class="no">03</span><h3>Причёски и укладки</h3><p>Свадебные сборы, сборы на корпоратив, вечерние причёски, прикорневой объём.</p><span class="v">по записи</span></div>
+      <div class="srow"><span class="no">04</span><h3>Окрашивание</h3><p>Сложное окрашивание на органической линейке Tempting Erayba Marginal и Dr&rsquo;Sorbie.</p><span class="v">по записи</span></div>
+      <div class="srow"><span class="no">05</span><h3>Выпрямление и восстановление</h3><p>Органическое выпрямление и восстановление Dr&rsquo;Sorbie, кератин, ботокс, полировка, уходы.</p><span class="v">по записи</span></div>
+      <div class="srow"><span class="no">06</span><h3>Завивка</h3><p>Корейская завивка Juno hair, женская и мужская химзавивка.</p><span class="v">по записи</span></div>
+      <div class="srow"><span class="no">07</span><h3>Женская стрижка</h3><p>Стрижка с расчётом на то, как она будет отрастать.</p><span class="v">от 2 000 ₽</span></div>
+      <div class="srow"><span class="no">08</span><h3>Мужская стрижка</h3><p>Мужская стрижка, стрижка бороды.</p><span class="v">от 1 200 ₽</span></div>
+      <div class="srow"><span class="no">09</span><h3>Детская стрижка</h3><p>Первая стрижка малыша и стрижки школьников.</p><span class="v">по записи</span></div>
+      <div class="srow"><span class="no">10</span><h3>Наращивание волос</h3><p>Наращивание и работа с уже нарощенными волосами.</p><span class="v">по записи</span></div>
+      <div class="srow"><span class="no">11</span><h3>Макияж и маникюр</h3><p>В том же пространстве работают мастера по макияжу и маникюру.</p><span class="v">по записи</span></div>
+      <div class="srow"><span class="no">12</span><h3>Консультация</h3><p>«Консультация по любым видам услуг — бесплатно», — из поста мастера.</p><span class="v">бесплатно</span></div>
+    </div>
+    <p class="note">В 2ГИС указаны только две позиции прайса, они и стоят выше. Стоимость остальных работ мастер называет при записи. Цены не являются публичной офертой (ст. 437 ГК РФ).</p>
+  </div>
+</section>
+
+<!-- косы -->
+<section class="sect feat" id="braids">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="lab">02 — Косы</span>
+      <h2>Плетение, которое <i>держится неделями</i></h2>
+      <p>«Доча проходила 26–27 дней. При том что каждый день была в воде», — Татьяна Банина, отзыв в 2ГИС.</p>
+    </div>
+    <div class="fgrid rv">
+      <figure><img src="w-01.jpg" alt="Брейды с бусинами, работа мастера" loading="lazy"><figcaption>Брейды с декором</figcaption></figure>
+      <figure><img src="w-03.jpg" alt="Цветные косы из канекалона на длину" loading="lazy"><figcaption>Канекалон в цвете</figcaption></figure>
+      <figure><img src="w-07.jpg" alt="Косы, убранные назад, взрослая работа" loading="lazy"><figcaption>Плетение на каждый день</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- работы -->
+<section class="sect" id="works">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="lab">03 — Работы</span>
+      <h2>Фотографии <i>со страницы мастера</i></h2>
+      <p>Снимки публикует сама Нина. Ничего не обрезано и не перекрашено.</p>
+    </div>
+    <div class="works rv">
+      <figure><img src="w-02.jpg" alt="Брейды с тонкими косами и вплетением" loading="lazy"><figcaption><span>Брейды</span><i>01</i></figcaption></figure>
+      <figure><img src="w-04.jpg" alt="Цветные прядки в детской причёске" loading="lazy"><figcaption><span>Цветные прядки</span><i>02</i></figcaption></figure>
+      <figure><img src="w-05.jpg" alt="Собранная причёска с косами" loading="lazy"><figcaption><span>Собранная причёска</span><i>03</i></figcaption></figure>
+      <figure><img src="w-06.jpg" alt="Детская причёска с декором" loading="lazy"><figcaption><span>Детская причёска</span><i>04</i></figcaption></figure>
+      <figure><img src="w-08.jpg" alt="Косы, убранные в хвост" loading="lazy"><figcaption><span>Косы в хвост</span><i>05</i></figcaption></figure>
+      <figure><img src="w-09.jpg" alt="Брейды на короткую длину" loading="lazy"><figcaption><span>Брейды</span><i>06</i></figcaption></figure>
+      <figure><img src="w-10.jpg" alt="Блонд без порошка на органической линейке" loading="lazy"><figcaption><span>Блонд без порошка</span><i>07</i></figcaption></figure>
+      <figure><img src="w-11.jpg" alt="Окрашивание в холодный блонд" loading="lazy"><figcaption><span>Окрашивание</span><i>08</i></figcaption></figure>
+      <figure><img src="w-12.jpg" alt="Длинные красные вплетения" loading="lazy"><figcaption><span>Вплетения в цвете</span><i>09</i></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- отзывы -->
+<section class="sect" id="revs" style="background:var(--milk-2)">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="lab">04 — Отзывы</span>
+      <h2>4,9 из 5 <i>в 2ГИС</i></h2>
+      <p>37 оценок и 30 отзывов в карточке. Ниже — фрагменты, тексты открыты в 2ГИС.</p>
+    </div>
+    <div class="revs rv">
+      <div class="rev"><div class="stars">★★★★★</div>
+        <p>«Нина не простой рядовой мастер. Это человек с глубоким чувством прекрасного… Делая стрижку, она старается ещё и на будущее, чтоб всё отрастало красиво, плавно и долго».</p>
+        <div class="who"><span>Оксана Корытько</span><i>2ГИС</i></div></div>
+      <div class="rev"><div class="stars">★★★★★</div>
+        <p>«У меня очень тонкий волос, и сделать причёску красивой и простой в укладке мало кто умеет. Нина умеет. Косы плетёт сумасшедше крутые».</p>
+        <div class="who"><span>Ольга Серенкова</span><i>2ГИС</i></div></div>
+      <div class="rev"><div class="stars">★★★★★</div>
+        <p>«Она сделала мне две французские косы, которые продержались три недели — и никаких неприятных ощущений. Спасибо и за сервис: чашечка кофе, конфетка, маленький презент с собой».</p>
+        <div class="who"><span>Александра Моисеева</span><i>2ГИС</i></div></div>
+      <div class="rev"><div class="stars">★★★★★</div>
+        <p>«Подстригла сегодня своего малышарика, 1 год 9 месяцев. Это была его первая стрижка. Всё прошло очень быстро и без слёз».</p>
+        <div class="who"><span>O. T.</span><i>2ГИС</i></div></div>
+      <div class="rev"><div class="stars">★★★★★</div>
+        <p>«Нина всегда даёт профессиональные советы по уходу за волосами. Всегда отличная мужская стрижка, быстро и недорого».</p>
+        <div class="who"><span>Денис Михайлов</span><i>2ГИС</i></div></div>
+      <div class="rev"><div class="stars">★★★★★</div>
+        <p>«Огромная благодарность Нине, дети безумно счастливы. Море позитивных эмоций и воплощение детских желаний».</p>
+        <div class="who"><span>Константин Сушенов</span><i>2ГИС</i></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- мастер -->
+<section class="sect" id="master">
+  <div class="wrap mast rv">
+    <img src="master.jpg" alt="Нина Калашникова, мастер по причёскам">
+    <div>
+      <span class="lab" style="color:var(--coral);display:block;margin-bottom:16px">05 — Мастер</span>
+      <div class="q">«Умопомрачительные, шикарные, самые лучшие и симпатичные девушки — это девушки Сибири, красноярочки. Я хочу сделать вас более заметными в нашем большом городе».</div>
+      <div class="from">Нина Калашникова</div>
+      <ul>
+        <li>«Творим красоту уже лет 20, ой, больше» — подпись под работой на странице мастера.</li>
+        <li>Работает в пространстве Ninina.pricheska на Ладо Кецховели, 34, вместе с мастерами по макияжу и маникюру.</li>
+        <li>Окрашивания и уходы на органических линейках Tempting Erayba Marginal и Dr&rsquo;Sorbie, корейская завивка Juno hair.</li>
+        <li>В карточке 2ГИС отмечены выезд на дом, Wi-Fi, пандус и доступный вход.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="ribbon"></div>
+<!-- запись -->
+<section class="sect book" id="book">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="lab" style="color:#9FE3D4">06 — Запись</span>
+      <h2>Запись <i>по телефону и в сообщениях</i></h2>
+      <p>Онлайн-записи у мастера нет. Позвоните или напишите — так быстрее всего.</p>
+    </div>
+    <div class="bgrid rv">
+      <div>
+        <div class="brow"><span class="k">Телефон</span><span class="v"><a href="tel:+79029646566">+7 902 964-65-66</a><small>он же WhatsApp и Telegram</small></span></div>
+        <div class="brow"><span class="k">Адрес</span><span class="v">Красноярск, ул. Ладо Кецховели, 34, 2 этаж<small>Железнодорожный район, 660028</small></span></div>
+        <div class="brow"><span class="k">Режим</span><span class="v">Ежедневно с 07:30 до 22:00<small>по предварительной записи</small></span></div>
+        <div class="brow"><span class="k">Оплата</span><span class="v">Наличными или переводом на карту</span></div>
+      </div>
+      <div>
+        <div class="brow"><span class="k">ВКонтакте</span><span class="v"><a href="https://vk.com/pricheskikn" target="_blank" rel="noopener">Страница мастера</a><small>и сообщество NININA.PRICHESKA</small></span></div>
+        <div class="brow"><span class="k">2ГИС</span><span class="v"><a href="https://2gis.ru/krasnoyarsk/firm/70000001082766352" target="_blank" rel="noopener">Карточка салона</a><small>4,9 из 5, 37 оценок</small></span></div>
+        <div class="brow"><span class="k">Выезд</span><span class="v">Выезд на дом отмечен в карточке 2ГИС</span></div>
+        <div class="acts">
+          <a class="btn btn-s" href="tel:+79029646566">Позвонить</a>
+          <a class="btn btn-o" href="https://wa.me/79029646566" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-o" href="https://vk.com/pricheskikn" target="_blank" rel="noopener">ВКонтакте</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- правовое -->
+<section class="sect legal" id="legal">
+  <div class="wrap lgrid rv">
+    <div>
+      <h3>Исполнитель услуг</h3>
+      <p>
+        Мастер: Нина Калашникова<br>
+        Адрес оказания услуг: 660028, Красноярский край, г. Красноярск, ул. Ладо Кецховели, 34, 2 этаж<br>
+        Телефон: <a href="tel:+79029646566">+7 902 964-65-66</a><br>
+        Режим работы: ежедневно с 07:30 до 22:00, по предварительной записи
+      </p>
+      <p>Цены на сайте не являются публичной офертой (ст. 437 ГК РФ). Итоговая стоимость зависит от длины и состояния волос, объёма работы и материалов и называется мастером до начала работы. Сайт не собирает персональные данные: форм заявок нет, запись ведётся по телефону и в сообщениях.</p>
+    </div>
+    <div>
+      <h3>Важно перед процедурой</h3>
+      <div class="warn">Услуги не являются медицинскими. Имеются ограничения, уточняйте у мастера.</div>
+      <p>Работу переносят или подбирают иначе, если есть:</p>
+      <ul>
+        <li>повреждения, воспаления или высыпания на коже головы;</li>
+        <li>индивидуальная непереносимость компонентов красителя или составов для завивки и выпрямления;</li>
+        <li>сильно ослабленные или ломкие волосы — сначала уход, потом окрашивание;</li>
+        <li>беременность и грудное вскармливание: решение принимается вместе с мастером.</li>
+      </ul>
+      <p>Полный список ограничений мастер уточняет на консультации до записи. Сайт носит информационный характер.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var top=document.getElementById('top'), last=0;
+  addEventListener('scroll',function(){
+    var y=pageYOffset;
+    if(y>160 && y>last) top.classList.add('hide'); else top.classList.remove('hide');
+    last=y;
+  },{passive:true});
+
+  var wm=document.getElementById('wm');
+  function fitWm(){
+    var box=wm.parentNode.clientWidth; if(!box) return;
+    var m=document.getElementById('wm-measure');
+    if(!m){ m=document.createElement('div'); m.id='wm-measure';
+      m.style.cssText='position:absolute;left:-9999px;top:0;white-space:nowrap;visibility:hidden;pointer-events:none';
+      document.body.appendChild(m); }
+    var cs=getComputedStyle(wm);
+    m.style.fontFamily=cs.fontFamily; m.style.fontWeight=cs.fontWeight;
+    m.style.letterSpacing=cs.letterSpacing; m.style.textTransform=cs.textTransform;
+    m.style.fontSize='100px';
+    wm.querySelectorAll('span').forEach(function(s){
+      m.textContent=s.textContent; var w=m.offsetWidth; if(!w) return;
+      s.style.fontSize=Math.min(100*box/w*0.98, innerHeight*0.155, 96).toFixed(2)+'px';
+    });
+  }
+  fitWm(); addEventListener('resize',fitWm);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fitWm);
+
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{rootMargin:'0px 0px -12% 0px'});
+  document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+})();
+</script>
+
+</body>
+</html>
